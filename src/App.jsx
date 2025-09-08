@@ -3,12 +3,19 @@ import HomePage from './pages/HomePage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
+import AuthStatus from './components/AuthStatus';
+import Dashboard from './components/Dashboard';
+import CartButton from './components/CartButton';
 
 const App = () => {
   const userLogin = false
   return (
     <Router>
       <Navbar/>
+      {/* Compontes para borrar */}
+      <AuthStatus/>
+      <Dashboard />
+      <CartButton user={true} cart={['pc', 'mouse', 'teclado']}/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="/signup" element={!userLogin ? <SignUpPage/> : <Navigate to="/" />} />
