@@ -12,12 +12,20 @@ const NavbarBase = ({user, cart}) => {
       </Link>
 
       <nav className="flex flex-wrap items-center gap-4">
-        <Link className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out" to="/">
+        <Link
+          className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+          to="/"
+        >
           Home
         </Link>
-        <CartButton user={user} cart={cart}/>      
+        <Link
+          className="text-gray-300 hover:text-emerald-400 transition duration-300 ease-in-out"
+          to="/login"
+        >
+          Login
+        </Link>
+        <CartButton user={user} cart={cart} />
       </nav>
-
     </>
   );
 }
