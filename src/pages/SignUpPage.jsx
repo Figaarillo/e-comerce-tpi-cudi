@@ -1,73 +1,79 @@
-import { useState } from "react";
-import TitleForm from "../components/TitleForm";
-import { KeyRound, Mail, Phone, Smartphone, UserIcon } from "lucide-react";
-import FormField from "../components/FormField";
+import { useState } from 'react';
+import { KeyRound, Mail, Smartphone, UserIcon } from 'lucide-react';
+import FormContainer from '../components/FormContainer';
 
 const SignUpPage = () => {
-    const [name, setName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleSubmit = e => {
-      e.preventDefault();
-      console.log('Email:', email);
-      console.log('Password:', password);
-      console.log("Name:", name);
-      console.log("LastName:", lastName);
-      console.log("Phone:", phone);
-    };
-  
-  
+  const handleSubmit = e => {
+    e.preventDefault();
+    console.log('Email:', email);
+    console.log('Password:', password);
+    console.log('Name:', name);
+    console.log('LastName:', lastName);
+    console.log('Phone:', phone);
+  };
+
+  const fields = [
+    {
+      name: 'name',
+      label: 'Ingrese su nombre',
+      icon: UserIcon,
+      value: name,
+      onChange: setName,
+      type: 'text',
+      placeholder: 'Ej.: Juan',
+    },
+    {
+      name: 'lastName',
+      label: 'Ingrese su apellido',
+      icon: UserIcon,
+      value: lastName,
+      onChange: setLastName,
+      type: 'text',
+      placeholder: 'Ej.: Perez',
+    },
+    {
+      name: 'phone',
+      label: 'Ingrese su telefono',
+      icon: Smartphone,
+      value: phone,
+      onChange: setPhone,
+      type: 'tel',
+      placeholder: 'Ej.: 123456789',
+    },
+    {
+      name: 'email',
+      label: 'Ingrese su correo',
+      icon: Mail,
+      value: email,
+      onChange: setEmail,
+      type: 'email',
+      placeholder: 'Ej.: 2XN0a@example.com',
+    },
+    {
+      name: 'password',
+      label: 'Ingrese su contraseña',
+      icon: KeyRound,
+      value: password,
+      onChange: setPassword,
+      type: 'password',
+      placeholder: 'Ej.: 123456',
+    },
+  ];
+
   return (
-    <div>
-      <TitleForm title="Registrarse" />
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="bg-gray-800 py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form onSubmit={handleSubmit} className="space-y-10">
-            <FormField
-              fieldName={"name"}
-              FieldIcon={UserIcon}
-              fieldValue={name}
-              onChange={setName}
-            />
-            <FormField
-              fieldName={"lastName"}
-              FieldIcon={UserIcon}
-              fieldValue={lastName}
-              onChange={setLastName}
-            />
-            <FormField
-              fieldName={"phone"}
-              FieldIcon={Smartphone}
-              fieldValue={phone}
-              onChange={setPhone}
-            />
-            <FormField
-              fieldName="email"
-              FieldIcon={Mail}
-              fieldValue={email}
-              onChange={setEmail}
-            />
-            <FormField
-              fieldName="password"
-              FieldIcon={KeyRound}
-              fieldValue={password}
-              onChange={setPassword}
-            />
-
-            <button
-              className="w-full flex justify-center border rounded-md border-transparent bg-emerald-600 py-2 px-4 text-sm font-medium text-white hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2"
-              type="submit"
-            >
-              Enviar{' '}
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <FormContainer
+      title="Crear cuenta"
+      fields={fields}
+      onSubmit={handleSubmit}
+      submitLabel="Completar"
+    />
   );
 };
 
-export default SignUpPage
+export default SignUpPage;
