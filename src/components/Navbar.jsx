@@ -9,10 +9,15 @@ const Navbar = () => {
   const isAdmin = true
   
   return (
-    <nav className="flex flex-wrap place-items-center gap-4">
-      <NavbarBase user={user} cart={cart}/>
-      <Dashboard isAdmin={isAdmin}/>
-      <AuthStatus user={user}/>
+    <nav className="flex justify-between items-center px-6 py-3 bg-white shadow">
+     <div className="flex items-center gap-8">
+        <NavbarBase user={user} cart={cart} />
+      </div>
+
+      <div className="flex items-center gap-4">
+        <Dashboard isAdmin={isAdmin} />
+        <AuthStatus user={user} />
+      </div>
     </nav>
   );
 }
