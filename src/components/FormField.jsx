@@ -21,7 +21,7 @@ const FormField = ({ name, label, icon: Icon, value, onChange, type = "text", pl
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder || label || `Ingrese su ${name}`}
-          className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm text-gray-400"
+          className="block w-full appearance-none rounded-md border border-gray-300 px-10 py-2 placeholder-gray-400 shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm text-gray-400"
         />
       </div>
     </div>
