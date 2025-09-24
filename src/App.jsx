@@ -7,8 +7,10 @@ import AuthStatus from './components/AuthStatus';
 import Dashboard from './components/Dashboard';
 import CartButton from './components/CartButton';
 import NavbarBase from './components/NavbarBase';
+import AdminPage from './pages/AdminPage';
 
 const App = () => {
+  const user = {role: "admin"}
   const userLogin = false
   return (
     <Router>
