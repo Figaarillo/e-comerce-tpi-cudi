@@ -34,7 +34,7 @@ const LoginPage = () => {
   ];
 
   return (
-    <FormContainer title="Iniciar sesión" fields={fields} onSubmit={handleSubmit} submitLabel="Ingresar"/>
+    <FormContainer title="Iniciar sesión" fields={fields} onSubmit={handleSubmit} submitLabel="Ingresar" />
   );
 }
 

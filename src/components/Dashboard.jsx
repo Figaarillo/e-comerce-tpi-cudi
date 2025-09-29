@@ -1,7 +1,7 @@
 import { Lock } from "lucide-react"
 import { Link } from "react-router-dom"
 
-const Dashboard = ({isAdmin = true}) => {
+const Dashboard = ({ isAdmin = true }) => {
   return (
     isAdmin && (
       <Link

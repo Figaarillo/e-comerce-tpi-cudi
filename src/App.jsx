@@ -3,10 +3,6 @@ import HomePage from './pages/HomePage';
 import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import Navbar from './components/Navbar';
-import AuthStatus from './components/AuthStatus';
-import Dashboard from './components/Dashboard';
-import CartButton from './components/CartButton';
-import NavbarBase from './components/NavbarBase';
 import AdminPage from './pages/AdminPage';
 
 const App = () => {

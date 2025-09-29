@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import CartButton from "./CartButton";
 
-const NavbarBase = ({user, cart}) => {
+const NavbarBase = ({ user, cart }) => {
   return (
     <>
       <Link
