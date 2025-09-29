@@ -7,10 +7,10 @@ const Navbar = () => {
   const user = true
   const cart = ['pc', 'mouse', 'teclado']
   const isAdmin = true
-  
+
   return (
     <nav className="flex justify-between items-center px-6 py-3 bg-white shadow">
-     <div className="flex items-center gap-8">
+      <div className="flex items-center gap-8">
         <NavbarBase user={user} cart={cart} />
       </div>
 

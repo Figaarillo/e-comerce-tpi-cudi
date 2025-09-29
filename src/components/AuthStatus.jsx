@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { LogIn, LogOut, UserPlus } from 'lucide-react'
 
-const AuthStatus = ({user = true}) => {
+const AuthStatus = ({ user = true }) => {
   const [login, setLogin] = useState(true)
 
   return user ? (
@@ -29,12 +29,9 @@ const AuthStatus = ({user = true}) => {
       >
         <UserPlus className="mr-2" size={18} />
         <LogIn className='mr-2' size={18} />
-        
       </Link>
     </>
   );
-  
-    
 }
 
 export default AuthStatus

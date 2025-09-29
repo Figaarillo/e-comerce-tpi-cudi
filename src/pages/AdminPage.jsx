@@ -25,7 +25,7 @@ const AdminPage = () => {
   const toggleActive = productId => {
     console.log('Se esta cambiando el estado del producto: ', productId);
 
-    if (products.active === undefined){
+    if (products.active === undefined) {
       products.active = true
     }
 
@@ -54,12 +54,12 @@ const AdminPage = () => {
 
         <AdminTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         {activeTab === 'create' && (
-          <CreateProductForm addProduct={addProduct} /> 
+          <CreateProductForm addProduct={addProduct} />
         )}
         {activeTab === 'products' && (
           <ProductList products={products} removeProduct={removeProduct} toggleActive={toggleActive} />
         )}
-        {activeTab === 'analytics' && <Analytics/>}
+        {activeTab === 'analytics' && <Analytics />}
       </div>
     </div>
   );
