@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { KeyRound, Mail, Smartphone, UserIcon } from 'lucide-react';
 import FormContainer from '../components/FormContainer';
 
+const apiURL = import.meta.env.VITE_API_URL
+
 const SignUpPage = () => {
   const [name, setName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -11,11 +13,20 @@ const SignUpPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    console.log('Name:', name);
-    console.log('LastName:', lastName);
-    console.log('Phone:', phone);
+    fetch(`${apiURL}/api/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: name,
+        telephone: phone,
+        email: email,
+        password: password
+      }).then(response => {
+        console.log(response);
+      }).catch(error => {
+        console.log(error);
+      })
+    })
   };
 
   const fields = [

@@ -14,13 +14,14 @@ const CategoryPage = () => {
 
   async function fetchProductsByCategory() {
     try {
-      const response = await fetch(
-        `https://fakestoreapi.com/products/category/${category}`
-      );
-      const data = await response.json();
+      // const response = await fetch(`https://fakestoreapi.com/products/category/${category}`);
+      const response = await fetch(`https://localhost:3000/api/products/category/${category}`);
+
+      const { data } = await response.json();
+
       setProducts(data);
     } catch (error) {
-      console.error('Error fetching products:', error);
+      console.error('Error fetching products:', error.message);
     }
   }
 

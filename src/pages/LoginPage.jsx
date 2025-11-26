@@ -2,14 +2,29 @@ import { KeyRound, Mail } from "lucide-react";
 import { useState } from "react";
 import FormContainer from "../components/FormContainer";
 
+const apiURL = import.meta.env.VITE_API_URL
+
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    // console.log('Email:', email);
+    // console.log('Password:', password);
+
+    // TODO: hace un fetch a localhost:3000/api/auth/login por medio de un pot
+
+    const response = fetch(`${apiURL}/api/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    })
   };
 
   const fields = [
